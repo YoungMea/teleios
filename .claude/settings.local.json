@@ -1,0 +1,20 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git --version)",
+      "Bash(npm --version)",
+      "Bash(pnpm --version)",
+      "Bash(git clone *)",
+      "Bash(node -e \"const p=require\\('./package.json'\\); console.log\\(JSON.stringify\\(p.scripts,null,2\\)\\); console.log\\('deps:', Object.keys\\(p.dependencies||{}\\).slice\\(0,40\\).join\\(', '\\)\\)\")",
+      "Bash(corepack enable *)",
+      "Bash(pnpm install *)",
+      "Bash(npx eslint *)",
+      "mcp__ide__getDiagnostics",
+      "Bash(echo \"EXIT:$?\")",
+      "Bash(timeout 600 npx vite build)",
+      "Bash(echo \"BUILD_EXIT:$?\")",
+      "Read(//tmp/**)",
+      "Bash(node -e \"const p=require\\('./package.json'\\); const all={...p.dependencies,...p.devDependencies}; console.log\\(Object.keys\\(all\\).filter\\(k=>/zip|tar|archive|file-saver|stream/i.test\\(k\\)\\).join\\(', '\\)||'NONE'\\)\")"
+    ]
+  }
+}
